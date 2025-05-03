@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdTech Time Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>EdTech Time Tracker</h1>
+      <div class="streak-container">
+        <div class="streak-count">
+          <span id="streakCounter">0</span>
+          <span class="streak-label">day streak</span>
+        </div>
+        <div class="streak-goal">
+          <label for="streakGoal">Daily Goal:</label>
+          <div class="goal-input">
+            <input type="number" id="streakGoal" min="1" max="1440">
+            <span>minutes</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-period="daily">Today</button>
+      <button class="tab-btn" data-period="weekly">This Week</button>
+      <button class="tab-btn" data-period="monthly">This Month</button>
+    </div>
+    
+    <div class="tab-content active" id="daily-content">
+      <div class="summary">
+        <div class="total-time">
+          <h3>Today's Learning</h3>
+          <div class="time" id="daily-total">0h 0m</div>
+        </div>
+        <div class="goal-progress">
+          <div class="progress-label">Goal Progress</div>
+          <div class="progress-bar">
+            <div class="progress" id="daily-progress"></div>
+          </div>
+          <div class="progress-text" id="daily-progress-text">0%</div>
+        </div>
+      </div>
+      <div class="app-breakdown" id="daily-breakdown">
+        <!-- App breakdown will be inserted here by JavaScript -->
+      </div>
+    </div>
+    
+    <div class="tab-content" id="weekly-content">
+      <div class="summary">
+        <div class="total-time">
+          <h3>This Week</h3>
+          <div class="time" id="weekly-total">0h 0m</div>
+        </div>
+      </div>
+      <div class="app-breakdown" id="weekly-breakdown">
+        <!-- App breakdown will be inserted here by JavaScript -->
+      </div>
+    </div>
+    
+    <div class="tab-content" id="monthly-content">
+      <div class="summary">
+        <div class="total-time">
+          <h3>This Month</h3>
+          <div class="time" id="monthly-total">0h 0m</div>
+        </div>
+      </div>
+      <div class="app-breakdown" id="monthly-breakdown">
+        <!-- App breakdown will be inserted here by JavaScript -->
+      </div>
+    </div>
+
+    <div class="reset-container">
+        <button id="resetButton" class="reset-button">Reset All Data</button>
+    </div>
+    
+    <footer>
+      <div class="settings">
+        <label class="toggle">
+          <input type="checkbox" id="trackingToggle" checked>
+          <span class="slider"></span>
+          <span class="toggle-label">Tracking Enabled</span>
+        </label>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
